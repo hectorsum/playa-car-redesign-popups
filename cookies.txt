@@ -1,0 +1,6 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+theguestbook.com	TRUE	/	FALSE	1999999999	request_method	GET
+theguestbook.com	TRUE	/	FALSE	1999999999	_session_id	7ba8e1abc0323b0a64bfe2464cb20900
+theguestbook.com	TRUE	/	FALSE	1999999999	SameSite	None
+

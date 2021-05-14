@@ -1,0 +1,200 @@
+.center-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+
+/* Button 1 */
+.style1{
+  background: rgb(0,82,156);
+  background: linear-gradient(166deg, rgba(0,82,156,1) 22%, rgba(129,164,196,1) 170%, rgba(162,185,206,1) 100%) !important;
+  border-radius: 5px !important;
+  padding: 8px 16px !important;
+  box-shadow: 0px 2px 3px rgb(0 0 0 / 45%);
+  border: none !important;
+  /* border: 1px solid #CCC !important; */
+  text-transform: uppercase;
+  color: white !important;
+  position: relative;
+  width: 30% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.style1 > i {
+  position: absolute;
+  left: 80% !important;
+}
+.revert-icon > i {
+  left: 12% !important;
+}
+
+/* Button 2 */
+.style2{
+  background: rgb(64,148,224);
+  background: linear-gradient(166deg, rgba(64,148,224,1) 6%, rgba(94,142,185,1) 59%);
+  border-radius: 20px !important;
+  padding: 8px 16px !important;
+  box-shadow: 0px 8px 15px rgb(0 0 0 / 20%);
+  border: none !important;
+  border: 1px solid #ccc !important;
+  text-transform: uppercase;
+  color: white !important;
+  position: relative;
+  width: 30% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.style2 > i {
+  position: absolute;
+  left: 80% !important;
+}
+
+/* Button 3 */
+.style3{
+  background: rgb(64,148,224);
+  background: linear-gradient(166deg, rgba(64,148,224,1) 6%, rgba(94,142,185,1) 59%);
+  border-radius: 5px !important;
+  padding: 8px 16px !important;
+  box-shadow: 0px 2px 3px rgb(0 0 0 / 45%);
+  border: none !important;
+  /* border: 1px solid #ccc !important; */
+  text-transform: uppercase;
+  color: white !important;
+  position: relative;
+  width: 30% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.style3 > i {
+  position: absolute;
+  left: 80% !important;
+}
+
+/* Button 4 */
+.style4{
+  background: rgb(64,148,224);
+  background: linear-gradient(166deg, rgba(64,148,224,1) 100%, rgba(130,130,199,1) 100%);
+  border-radius: 5px !important;
+  padding: 8px 16px !important;
+  box-shadow: 0px 2px 3px rgb(0 0 0 / 45%);
+  border: none !important;
+  /* border: 1px solid #ccc !important; */
+  text-transform: uppercase;
+  color: white !important;
+  position: relative;
+  width: 30% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.style4 > i {
+  position: absolute;
+  left: 80% !important;
+}
+
+
+.revert-icon > i {
+  left: 12% !important;
+}
+
+@media (max-width:1024px){
+  .style1 > i,.style2 > i, .style3 > i, .style4 > i {
+    position: absolute;
+    left: 90% !important;
+  }
+  .style1 ,.style2, .style3, .style4{
+    width: 100% !important;
+    font-size: 12px !important;
+    padding: 10px 20px !important
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+/* PopUp Total "Change Complete! Total extra cost:" */
+.pop-up .pop-up-title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: Arial;
+  background: #E6E6E6;
+  color: #4a4949;
+  padding: 15px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+.f16px {
+  margin-left: 0 !important;
+  font: 16px 'FiraSans-Medium';
+  margin-bottom: 0 !important;
+}
+.green:before {
+  content: '$';
+}
+.green {
+  border: 2px solid #1aa997;
+  color: #1aa997;
+  border-radius: 5px;
+  padding: 0px 4px;
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  font: 20.52px 'FiraSans-Regular';
+}
+
+
+/* Cancel Button */
+.cancel{
+  background: rgb(218,60,66);
+  background: linear-gradient(166deg, rgba(218,60,66,1) 100%, rgba(24,24,24,1) 100%);
+  border-radius: 5px !important;
+  padding: 8px 16px !important;
+  box-shadow: 0px 2px 3px rgb(0 0 0 / 45%);
+  border: none !important;
+  /* border: 1px solid #ccc !important; */
+  text-transform: uppercase;
+  color: white !important;
+  position: relative;
+  width: 30% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+/* Popup 2 */
+.input-text{
+  padding: .5rem;
+  width: 100% !important;
+  border-radius: 5px;
+}
+.confirm-button{
+  background: rgb(71,167,51);
+  background: linear-gradient(166deg, rgba(71,167,51,1) 100%, rgba(24,24,24,1) 100%);
+    border-radius: 5px !important;
+    padding: 8px 16px !important;
+    box-shadow: 0px 2px 3px rgb(0 0 0 / 45%);
+    border: none !important;
+    /* border: 1px solid #ccc !important; */
+    text-transform: uppercase;
+    color: white !important;
+    position: relative;
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-right: 5px; */
+    margin-bottom: 5px;
+}
