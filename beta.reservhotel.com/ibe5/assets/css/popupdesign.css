@@ -6,8 +6,8 @@
 
 /* Button 1 */
 .style1{
-  background: rgb(0,82,156);
-  background: linear-gradient(166deg, rgba(0,82,156,1) 22%, rgba(129,164,196,1) 170%, rgba(162,185,206,1) 100%) !important;
+  background: rgb(52,177,181);
+  background: linear-gradient(166deg, rgba(52,177,181,1) 0%, rgba(51,163,167,1) 100%);
   border-radius: 5px !important;
   padding: 8px 16px !important;
   box-shadow: 0px 2px 3px rgb(0 0 0 / 45%);
@@ -21,6 +21,12 @@
   justify-content: center;
   align-items: center;
 }
+
+.button-color {
+  background: rgb(0,82,156);
+  background: linear-gradient(166deg, rgba(0,82,156,1) 22%, rgba(129,164,196,1) 170%, rgba(162,185,206,1) 100%) !important;
+}
+
 .style1 > i {
   position: absolute;
   left: 80% !important;
