@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Names</title>
+  <script src="https://kit.fontawesome.com/128ea4bde0.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="popup">
+    <header>
+      <p>
+        Change Itinerary
+      </p>
+    </header>
+    <div class="body-popup">
+      <div>
+        <p>Change Names:</p>
+      </div>
+      <div class="fields-wrapper name-wrapper">
+        <div class="form-group">
+          <span>First Name</span>
+          <input class="form-field" type="text" id="firstname" value="">
+        </div>
+        <div class="form-group">
+          <span>Last Name</span>
+          <input class="form-field" type="email" id="lastname" value="">
+        </div>
+      </div>
+      <table>
+        <thead>
+          <th>First Names</th>
+          <th>Last Names</th>
+          <th></th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ricardo</td>
+            <td>Hernandez Colmenares</td>
+            <td>
+              <a class="check-button">
+                <i class="fas fa-check"></i>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Carlos Said</td>
+            <td>Pedroza Hernandez</td>
+            <td>
+              <a class="check-button">
+                <i class="fas fa-check"></i>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Ana Hilda </td>
+            <td>Colmenares Rodriguez</td>
+            <td>
+              <a class="check-button">
+                <i class="fas fa-check"></i>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Ricardo</td>
+            <td>Hernandez Colmenares</td>
+            <td>
+              <a class="check-button">
+                <i class="fas fa-check"></i>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Carlos Said</td>
+            <td>Pedroza Hernandez</td>
+            <td>
+              <a class="check-button">
+                <i class="fas fa-check"></i>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Ana Hilda </td>
+            <td>Colmenares Rodriguez</td>
+            <td>
+              <a class="check-button">
+                <i class="fas fa-check"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="style1" type="button">
+        Submit
+      </button>
+    </div>
+  </div>
+  <script>
+    const btn_add_from_row = document.querySelectorAll('.body-popup .check-button');
+    loadEventListeners();
+    function loadEventListeners(){
+      btn_add_from_row.forEach((val,index)=>{
+        val.addEventListener('click',onClickAddRow);
+      });
+    }
+    function onClickAddRow(evt){
+      var row = evt.target.closest('tr');
+      document.getElementById('firstname').value = row.children[0].innerText;
+      document.getElementById('lastname').value = row.children[1].innerText;
+    }
+  </script>
+</body>
+</html>
