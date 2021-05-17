@@ -139,6 +139,7 @@
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
+  margin: 0;
 }
 .f16px {
   margin-left: 0 !important;
@@ -161,8 +162,8 @@
 
 /* Cancel Button */
 .cancel{
-  background: rgb(218,60,66);
-  background: linear-gradient(166deg, rgba(218,60,66,1) 100%, rgba(24,24,24,1) 100%);
+  background: rgb(255,255,255);
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(217,222,225,1) 0%, rgba(154,168,175,1) 0%, rgba(101,122,133,1) 100%);
   border-radius: 5px !important;
   padding: 8px 16px !important;
   box-shadow: 0px 2px 3px rgb(0 0 0 / 45%);
