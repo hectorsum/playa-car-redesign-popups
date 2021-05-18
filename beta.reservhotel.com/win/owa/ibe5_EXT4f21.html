@@ -511,7 +511,7 @@
     }
   </style>
   <link rel="stylesheet" href="../../hotel_fastlink_css/152.css" type="text/css">
-  <link rel="stylesheet" href="../../ibe5/assets/css/popupdesign.css" type="text/css">
+  <link rel="stylesheet" href="../../ibe5/assets/css/popups.css" type="text/css">
   <script type="text/javascript" src="../../ibe5/assets/js/jquery-3.5.1.min.js"></script>
   <script type="text/javascript" src="../../ibe5/assets2/js/jquery-ui.min.js"></script>
   <script type="text/javascript" src="../../ibe5/assets/js/script-ck.js"></script>
@@ -687,7 +687,7 @@
               var xmlDoc = jQuery.parseXML(res);
               var it = Number($(xmlDoc).find("Difference").text()) * 1;
               $("#itin-final-main").html("Change Complete! Total extra cost:");
-              $("#itin-final-sub").html(it.toFixed(2) + " ");
+              $("#itin-final-sub").html("<b class='amount'>"+Math.abs(it.toFixed(2))+"</>");
               $("#final-btn1").attr("onClick", "");
               $("#final-btn3").show();
               $("#final-btn3").attr("onclick",
@@ -722,7 +722,7 @@
               var xmlDoc = jQuery.parseXML(res);
               var it = Number($(xmlDoc).find("Difference").text()) * 1;
               $("#itin-final-main").html("Change Complete! Total extra cost:");
-              $("#itin-final-sub").html(it.toFixed(2) + " ");
+              $("#itin-final-sub").html("<b class='amount'>"+Math.abs(it.toFixed(2))+"</>");
               $("#final-btn1").attr("onClick", "");
               $("#final-btn3").show();
               $("#final-btn3").attr("onclick",
@@ -801,7 +801,7 @@
               var xmlDoc = jQuery.parseXML(res);
               var it = Number($(xmlDoc).find("Difference").text()) * 1;
               $("#itin-final-main").html("Change Complete! Total extra cost:");
-              $("#itin-final-sub").html(it.toFixed(2) + " ");
+              $("#itin-final-sub").html("<b class='amount'>"+Math.abs(it.toFixed(2))+"</>");
               $("#final-btn1").attr("onClick", "");
               $("#final-btn3").show();
               $("#final-btn3").attr("onclick",
@@ -875,7 +875,7 @@
         $.ajax({
           type: "get",
           data: req,
-          url: "/win/owa/modify_xml.controller",
+          url: "https://beta.reservhotel.com/win/owa/modify_xml.controller",
           success: function (res) {
             if (res.toLowerCase().indexOf("error") > 0) {
               $res = $($.parseXML(res));
@@ -887,7 +887,7 @@
               var xmlDoc = jQuery.parseXML(res);
               var it = Number($(xmlDoc).find("Difference").text()) * 1;
               $("#itin-final-main").html("Change Complete! Total extra cost:");
-              $("#itin-final-sub").html(it.toFixed(2) + " ");
+              $("#itin-final-sub").html("<b class='amount'>"+Math.abs(it.toFixed(2))+"</>");
               $("#final-btn1").attr("onClick", "");
               $("#final-btn3").show();
 
@@ -962,7 +962,7 @@
         $.ajax({
           type: "get",
           data: req,
-          url: "/win/owa/modify_xml.controller",
+          url: "https://beta.reservhotel.com/win/owa/modify_xml.controller",
           success: function (res) {
             if (res.toLowerCase().indexOf("error") > 0) {
               $res = $($.parseXML(res));
@@ -974,7 +974,7 @@
               var xmlDoc = jQuery.parseXML(res);
               var it = Number($(xmlDoc).find("Difference").text()) * 1;
               $("#itin-final-main").html("Change Complete! Total extra cost:");
-              $("#itin-final-sub").html(it.toFixed(2) + " ");
+              $("#itin-final-sub").html("<b class='amount'>"+Math.abs(it.toFixed(2))+"</>");
               $("#final-btn1").attr("onClick", "");
               $("#final-btn3").show();
 
@@ -998,17 +998,18 @@
         $.ajax({
           type: "get",
           data: req,
-          url: "/win/owa/modify_xml.controller",
+          url: "https://beta.reservhotel.com/win/owa/modify_xml.controller",
           success: function (res) {
             if (res.toLowerCase().indexOf("error") > 0) {
               $res = $($.parseXML(res));
               $("#itin-final-main").html($res.find("Error").text());
+              $("#itin-final-sub").hide();
               $("#final-btn3").show();
             } else {
               var xmlDoc = jQuery.parseXML(res);
               var it = Number($(xmlDoc).find("Difference").text()) * 1;
               $("#itin-final-main").html("Change Complete! Total extra cost:");
-              $("#itin-final-sub").html(it.toFixed(2) + " ");
+              $("#itin-final-sub").html("<b class='amount'>"+Math.abs(it.toFixed(2))+"</>");
               $("#final-btn1").attr("onClick", "");
               $("#final-btn3").show();
 
@@ -1050,7 +1051,7 @@
         $.ajax({
           type: "get",
           data: req,
-          url: "/win/owa/modify_xml.controller",
+          url: "https://beta.reservhotel.com/win/owa/modify_xml.controller",
           success: function (res) {
             if (res.toLowerCase().indexOf("error") > 0) {
               $res = $($.parseXML(res));
@@ -1109,7 +1110,7 @@
         $.ajax({
           type: "get",
           data: req,
-          url: "/win/owa/modify_xml.controller",
+          url: "https://beta.reservhotel.com/win/owa/modify_xml.controller",
           success: function (res) {
             if (res.toLowerCase().indexOf("error") > 0) {
               $res = $($.parseXML(res));
@@ -1121,7 +1122,7 @@
               var form = '';
               var it = Number($(xmlDoc).find("Difference").text()) * 1;
               $("#itin-final-main").html("Change rooms from " + currentRooms + " to " + $("#rooms").val() + "");
-              $("#itin-final-sub").html("Total extra cost: " + it.toFixed(2) + " <br>" + form);
+              $("#itin-final-sub").html("Total extra cost: <b class='amount'>" + Math.abs(it.toFixed(2)) + "</b>" + form);
               $("#final-btn1, #final-btn2").show();
               var MCO = 0;
               if ($(xmlDoc).find("MCO").text() != "") {
@@ -1161,7 +1162,7 @@
         $.ajax({
           type: "get",
           data: req,
-          url: "/win/owa/modify_xml.controller",
+          url: "https://beta.reservhotel.com/win/owa/modify_xml.controller",
           success: function (res) {
             if (res.toLowerCase().indexOf("error") > 0) {
               $res = $($.parseXML(res));
@@ -1173,12 +1174,12 @@
               var form = '';
               if (currentAdults < changeAdults) {
                 form =
-                  '<br><table width="100%" style="font-weight: normal;color: #000;"><tr><td>First Name</td><td>Last Name</td></tr>';
+                  '<div class="fields-wrapper mt-3">';
                 for (i = 0; i < adults; i++) {
                   form +=
-                    '<tr><td class="itincol2"><input type="text" class="fnameadd" value="" maxlength="30"></td><td><input type="text" class="lnameadd" value="" maxlength="30"></td></tr>';
+                    '<div class="name-wrapper"><div class="form-group"><span>First Name</span><input class="form-field fnameadd" type="text" maxlength="30"></div><div class="form-group"><span>Last Name</span><input class="form-field lnameadd" type="text" maxlength="30"></div></div>';
                 }
-                form += '</table>';
+                form += '</div>';
               } else {
                 form += "<br> Select Passengers to Delete: <br><br><div id='delete_in_form'>" + $("#delete_pass")
                   .html() + "</div>";
@@ -1186,7 +1187,7 @@
               var it = Number($(xmlDoc).find("Difference").text()) * 1;
               $("#itin-final-main").html("Change adults from " + currentAdults + " to " + $("#change-adults")
               .val() + "");
-              $("#itin-final-sub").html("Total extra cost: " + it.toFixed(2) + " <br>" + form);
+              $("#itin-final-sub").html("Total extra cost: <b class='amount'>" + it.toFixed(2) + "</b>" + form);
               $("#final-btn1, #final-btn2").show();
 
               var MCO = 0;
@@ -1249,7 +1250,7 @@
         $.ajax({
           type: "get",
           data: req,
-          url: "/win/owa/modify_xml.controller",
+          url: "https://beta.reservhotel.com/win/owa/modify_xml.controller",
           success: function (res) {
             if (res.toLowerCase().indexOf("error") > 0) {
               $res = $($.parseXML(res));
@@ -1259,18 +1260,17 @@
             } else {
               var xmlDoc = jQuery.parseXML(res);
               if (currentChildren < $("#change-children").val()) {
-                form =
-                  '<br><table width="100%" style="font-weight: normal;color: #000;"><tr><td>First Name</td><td>Last Name</td></tr>';
+                form = '<div class="fields-wrapper mt-3">';
                 for (i = 0; i < children; i++) {
                   form +=
-                    '<tr><td class="itincol2"><input type="text" class="fnameadd" value="" maxlength="30"></td><td><input type="text" class="lnameadd" value="" maxlength="30"></td></tr>';
+                    '<div class="name-wrapper"><div class="form-group"><span>First Name</span><input class="form-field fnameadd" type="text" maxlength="30"></div><div class="form-group"><span>Last Name</span><input class="form-field lnameadd" type="text" maxlength="30"></div></div>';
                 }
-                form += '</table>';
+                form += '</div>';
               }
               var it = Number($(xmlDoc).find("Difference").text()) * 1;
               $("#itin-final-main").html("Change children from " + currentChildren + " to " + $(
                 "#change-children").val() + "");
-              $("#itin-final-sub").html("Total extra cost: " + it.toFixed(2) + "  <br>" + form);
+              $("#itin-final-sub").html("Total extra cost: <b class='amount'>" + it.toFixed(2) + "</b>" + form);
 
               $("#final-btn1, #final-btn2").show();
 
@@ -1315,11 +1315,12 @@
           return;
         }
         $("#itin-final-main").html("Loading.....");
+        // $("#itin-content10").hide();
         $("#itin-final").show();
         $.ajax({
           type: "get",
           data: req,
-          url: "/win/owa/modify_xml.controller",
+          url: "https://beta.reservhotel.com/win/owa/modify_xml.controller",
           success: function (res) {
             if (res.toLowerCase().indexOf("error") > 0) {
               $res = $($.parseXML(res));
@@ -1330,17 +1331,17 @@
               var xmlDoc = jQuery.parseXML(res);
               if (currentChildren < $("#change-infant").val()) {
                 form =
-                  '<br><table width="100%" style="font-weight: normal;color: #000;"><tr><td>First Name</td><td>Last Name</td></tr>';
+                  '<div class="fields-wrapper mt-3">';
                 for (i = 0; i < children; i++) {
                   form +=
                     '<tr><td class="itincol2"><input type="text" class="fnameadd" value="" maxlength="30"></td><td><input type="text" class="lnameadd" value="" maxlength="30"></td></tr>';
                 }
-                form += '</table>';
+                form += '</div>';
               }
               var it = Number($(xmlDoc).find("Difference").text()) * 1;
               $("#itin-final-main").html("Change infants from " + currentChildren + " to " + $("#change-infant")
                 .val() + "");
-              $("#itin-final-sub").html("Total extra cost: " + it.toFixed(2) + "  <br>" + form);
+              $("#itin-final-sub").html("Total extra cost: <b class='amount'>" + it.toFixed(2) + "</b>" + form);
 
               $("#final-btn1, #final-btn2").show();
 
@@ -1363,7 +1364,7 @@
         $.ajax({
           type: "get",
           data: req,
-          url: "/win/owa/modify_xml.controller",
+          url: "https://beta.reservhotel.com/win/owa/modify_xml.controller",
           success: function (res) {
             if (res.toLowerCase().indexOf("error") > 0) {
               $res = $($.parseXML(res));
@@ -1375,7 +1376,7 @@
               var it = Number($(xmlDoc).find("Difference").text()) * 1;
               $("#itin-final-main").html("Change dates<br> from " + $("#aDate").val() + " to " + $("#dDate")
               .val() + "");
-              $("#itin-final-sub").html("Total extra cost: " + it.toFixed(2) + " ");
+              $("#itin-final-sub").html("Total extra cost: <b class='amount'>"+Math.abs(it.toFixed(2))+"<b/>");
 
               $("#final-btn1, #final-btn2").show();
 
@@ -1427,7 +1428,7 @@
         $.ajax({
           type: "get",
           data: req,
-          url: "/win/owa/modify_xml.controller",
+          url: "https://beta.reservhotel.com/win/owa/modify_xml.controller",
           success: function (res) {
             if (res.toLowerCase().indexOf("error") > 0) {
               $res = $($.parseXML(res));
@@ -1461,7 +1462,7 @@
         $.ajax({
           type: "get",
           data: req,
-          url: "/win/owa/modify_xml.controller",
+          url: "https://beta.reservhotel.com/win/owa/modify_xml.controller",
           success: function (res) {
             if (res.toLowerCase().indexOf("error") > 0) {
               $res = $($.parseXML(res));
@@ -1499,7 +1500,7 @@
         $.ajax({
           type: "get",
           data: req,
-          url: "/win/owa/modify_xml.controller",
+          url: "https://beta.reservhotel.com/win/owa/modify_xml.controller",
           success: function (res) {
             if (res.toLowerCase().indexOf("error") > 0) {
               $res = $($.parseXML(res));
@@ -1570,7 +1571,7 @@
           $.ajax({
             type: "get",
             data: req,
-            url: "/win/owa/modify_xml.controller",
+            url: "https://beta.reservhotel.com/win/owa/modify_xml.controller",
             success: function (res) {
               if (res.toLowerCase().indexOf("error") > 0) {
                 $res = $($.parseXML(res));
@@ -1806,24 +1807,25 @@
       $("#change-infant").change(function () {
 
         var ageOption = "";
-        var ageBox = "Select Infant Ages:";
+        var ageBox = "<div class='subtitle'><p>Select Infant Ages:</p></div>";
         $('#infant_content').empty();
         $("#delete_infant_sec").hide();
         var currentChildren = 0;
         if (currentChildren < $(this).val()) {
           ageOption +=
-            '<select class="select-choices save full-select change_select childages" name="childages">';
+            '<select class="save childages form-field" name="childages">';
           ageOption += '<option value="0">00</option>';
           ageOption += '<option value="1">01</option>';
           ageOption += '<option value="2">02</option>';
           ageOption += '<option value="3">03</option>';
 
-          ageOption += '</select>';
+          ageOption += '</select><span><i class="fas fa-sort-down"></i></span>';
           // show number of dropdowns depending on number of children selected
           for (i = currentChildren; i < $(this).val(); i++) {
-            ageBox +=
-              '<div class="row" style="margin-left: 33%;width:35%;"><div class="row-inner"><div class="first-col"><nobr>Child ' +
-              i + '</nobr></div>' + ageOption + '</div></div></div><br />';
+            ageBox += '<div class="date-wrapper"><label>Child '+parseInt(i+1)+'</label><div class="form-group">'+ageOption+'</div></div></div>';
+            if (i != $(this).val() - 1){
+              ageBox += '<hr style="color:#E6E6E6 !important;margin-top: 0 !important;margin-bottom: 0.5rem !important;">'
+            }
           }
 
 
@@ -1858,13 +1860,13 @@
       $("#change-children").change(function () {
 
         var ageOption = "";
-        var ageBox = "Select Child Ages:";
+        var ageBox = "<div class='subtitle'><p>Select Child Ages:</p></div>";
         var currentChildren = 0;
         $("#delete_children_sec").hide();
         $('#children_content').empty();
         if (currentChildren < $(this).val()) {
           ageOption +=
-            '<select class="select-choices save full-select change_select childages" name="childages">';
+            '<select class="save childages form-field" name="childages">';
           ageOption += '<option value="4">04</option>';
           ageOption += '<option value="5">05</option>';
           ageOption += '<option value="6">06</option>';
@@ -1875,14 +1877,14 @@
           ageOption += '<option value="11">11</option>';
           ageOption += '<option value="12">12</option>';
 
-          ageOption += '</select>';
+          ageOption += '</select><span><i class="fas fa-sort-down"></i></span>';
           // show number of dropdowns depending on number of children selected
           for (i = currentChildren; i < $(this).val(); i++) {
-            ageBox +=
-              '<div class="row" style="margin-left: 33%;width:35%;"><div class="row-inner"><div class="first-col"><nobr>Child ' +
-              i + '</nobr></div>' + ageOption + '</div></div></div><br />';
+              ageBox += '<div class="date-wrapper"><label>Child '+parseInt(i+1)+'</label><div class="form-group">'+ageOption+'</div></div></div>';
+              if (i != $(this).val() - 1){
+                ageBox += '<hr style="color:#E6E6E6 !important;margin-top: 0 !important;margin-bottom: 0.5rem !important;">'
+              }
           }
-
           $('#children_content').empty().html(ageBox);
 
           initialize_ddls1($('.that-select1'));
@@ -1981,9 +1983,9 @@
         dateFormat: "dd-M-y",
         minDate: 0,
         maxDate: "+24M +10D",
-        showOn: "both",
-        buttonImage: "/images/calendar.png",
-        buttonImageOnly: true,
+        // showOn: "both",
+        // buttonImage: "/beta.reservhotel.com/ibe5/assets/images/cal-icon.png",
+        // buttonImageOnly: true,
         showAnim: "fold",
         onSelect: function (selectedDate) {
 
@@ -1998,9 +2000,9 @@
         dateFormat: "dd-M-y",
         minDate: 0,
         maxDate: "+24M +10D",
-        showOn: "both",
-        buttonImage: "/images/calendar.png",
-        buttonImageOnly: true,
+        // showOn: "both",
+        // buttonImage: "/beta.reservhotel.com/ibe5/assets/images/cal-icon.png",
+        // buttonImageOnly: true,
         showAnim: "fold"
       });
     });
@@ -3595,183 +3597,202 @@
     </div>
 
 
-    <div class="pop-up" id="check-itinerary">
-      <h3 class="pop-up-title">Change Itinerary</h3>
-      <div class="pop-content center" id="itin-content">
-        <p class="center bold f14px">What would you like to update:</p>
-        <select class="select-choices save full-select change_select" name="change-opt" id="change-opt">
-          <option value="-1">Select</option>
-          <option value="08">Change Number of Rooms</option>
-          <option value="01">Change Dates</option>
-          <option value="07">Change Room/Rate</option>
-          <option value="02">Add/Remove Adults</option>
-          <option value="03">Add/Remove Children</option>
-          <option value="10">Add/Remove Infants</option>
-          <option value="05">Change Names</option>
-          <option value="04">Change Contact Info</option>
-          <option value="06">Change Payment Info</option>
-          <option value="11">Change Flight Information</option>
-          <option value="09">Make a Payment</option>
-        </select>
-        <p class="center center-button">
-          <!-- <input type="submit" class="number-submit style1" value="Submit" onClick="getChangeOpts();" style="float: inherit" /> -->
-          <button type="submit" class="number-submit style1" onclick="getChangeOpts();" style="float: inherit">
-            Submit
-            <i class="fas fa-chevron-right"></i>
-          </button>
+    <div class="popup" id="check-itinerary">
+      <!-- <h3 class="pop-up-title">Change Itinerary</h3> -->
+      <header>
+        <p>
+          Change Itinerary
         </p>
+      </header>
+      
+      <!-- MENU -->
+      <div class="body-popup" id="itin-content">
+        <div class="fields-wrapper">
+          <div class="subtitle">
+            <p>What would you like to update:</p>
+          </div>
+          <div class="form-group">
+            <select class="form-field" name="change-opt" id="change-opt">
+              <option value="-1">Select</option>
+              <option value="08">Change Number of Rooms</option>
+              <option value="01">Change Dates</option>
+              <option value="07">Change Room/Rate</option>
+              <option value="02">Add/Remove Adults</option>
+              <option value="03">Add/Remove Children</option>
+              <option value="10">Add/Remove Infants</option>
+              <option value="05">Change Names</option>
+              <option value="04">Change Contact Info</option>
+              <option value="06">Change Payment Info</option>
+              <option value="11">Change Flight Information</option>
+              <option value="09">Make a Payment</option>
+            </select>
+            <span>
+              <i class="fas fa-sort-down"></i>
+            </span>
+          </div>
+          <button class="newbtn btn-second number-submit" type="submit" onClick="getChangeOpts();">
+            Submit
+          </button>
+        </div>
       </div>
-      <div class="pop-content center hidden" id="itin-content01">
-        <p class="center bold f14px">Change Dates:</p>
-        <br>
-        <table width="100%">
-          <tr>
-            <td class="itincol">Arrival Date</td>
-            <td><input type="text" id="aDate" style="width:100px;display:inline" value="22-Sep-21"></td>
-          </tr>
-          <tr>
-            <td class="itincol">Departing Date</td>
-            <td><input type="text" id="dDate" style="width:100px;display:inline" value="29-Sep-21"></td>
-          </tr>
-        </table>
-        <p class="center center-button"><br>
-          <button type="submit" class="number-submit style1 revert-icon" onClick="getQuotes('quoteDates');" style="float: inherit">
-            <i class="fas fa-calendar-check"></i>
+      <!-- CHANGE DATES -->
+      <div class="body-popup" id="itin-content01">
+        <div class="fields-wrapper">
+          <div class="subtitle">
+            <p>Change Dates:</p>
+          </div>
+          <div class="date-wrapper">
+            <label for="aDate">Arrival Date</label>
+            <div class="form-group">
+              <input class="form-field" id="aDate" type="text" placeholder="Arrival Time" value="22-Sep-21">
+              <span><i class="fas fa-calendar-day"></i></span>
+            </div>
+          </div>
+          <div class="date-wrapper">
+            <label for="dDate">Departing Date	</label>
+            <div class="form-group">
+              <input class="form-field" id="dDate" type="text" placeholder="Arrival Time" value="29-Sep-21">
+              <span><i class="fas fa-calendar-day"></i></span>
+            </div>
+          </div>
+          <button type="submit" class="newbtn btn-second" onClick="getQuotes('quoteDates');" style="float: inherit">
             Quote
           </button>
-        </p>
-      </div>
-      <div class="pop-content center hidden" id="itin-content02">
-        <p class="center bold f14px">Add/Remove Adults:</p>
-        <table width="100%">
-          <tr>
-            <td style="text-align: right;padding-right: 50px;">Change Number of Adults To:</td>
-            <td style="padding-top: 10px;">
-
-              <select class="select-choices save full-select change_select" name="change-adults" id="change-adults">
-
-                <option value="1">1</option>
-                <option selected value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-
-              </select></td>
-          </tr>
-        </table>
-        <p class="center"><br>
-          <input type="submit" class="number-submit" value="Submit" onClick="getQuotes('quoteAdults');"
-            style="float: inherit" />
-        </p>
-
-      </div>
-      <div class="pop-content center hidden" id="itin-content03">
-        <p class="center bold f14px">Add/Remove Children:</p>
-        <table width="100%">
-          <tr>
-            <td style="text-align: right;padding-right: 50px;">Change Number Of Children To:</td>
-            <td style="padding-top: 10px;">
-              <select class="select-choices save full-select change_select" name="change-children" id="change-children">
-                <option selected value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-              </select>
-            </td>
-          </tr>
-        </table>
-        <div id="delete_children_sec" style="display:none;">
-          <h3>Select children to remove</h3>
-          <table width="100%" style="font-weight: normal;color: #000;">
-          </table>
         </div>
-        <div id="children_content"></div>
-        <p class="center"><br>
-          <input type="submit" class="number-submit" value="Submit" onClick="getQuotes('quoteChildren');"
-            style="float: inherit" />
-        </p>
       </div>
-      <div class="pop-content center hidden" id="itin-content10">
-        <p class="center bold f14px">Add/Remove Infants:</p>
-        <table width="100%">
-          <tr>
-            <td style="text-align: right;padding-right: 50px;">Change Number Of Infants To:</td>
-            <td style="padding-top: 10px;">
-              <select class="select-choices save full-select change_select" name="change-infant" id="change-infant">
-                <option selected value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-              </select>
-            </td>
-          </tr>
-        </table>
-        <div id="delete_infant_sec" style="display:none;">
-          <h3>Select infant(s) to remove</h3>
-          <table width="100%" style="font-weight: normal;color: #000;">
-          </table>
+      <!-- ADD/REMOVE ADULT -->
+      <div class="body-popup" id="itin-content02">
+        <div class="fields-wrapper">
+          <div class="subtitle">
+            <p>Add/Remove Adults:</p>
+          </div>
+          <div class="form-group">
+            <select class="form-field save" name="change-adults" id="change-adults">
+              <option value="1">1</option>
+              <option selected value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+            <span>
+              <i class="fas fa-sort-down"></i>
+            </span>
+          </div>
+          <button class="newbtn btn-second number-submit" type="submit" onClick="getQuotes('quoteAdults');">
+            Submit
+          </button>
         </div>
-        <div id="infant_content"></div>
-        <p class="center"><br>
-          <input type="submit" class="number-submit" value="Submit" onClick="getQuotes('quoteInfant');"
-            style="float: inherit" />
-        </p>
       </div>
-      <div class="pop-content center hidden" id="itin-content04">
-        <p class="center bold f14px">Change Contact Info:</p>
-        <table width="100%">
-          <tr>
-            <td class="itincol2">Address</td>
-            <td><input type="text" id="address" value="LAPRIDA 1474" maxlength="40"></td>
-          </tr>
-          <tr>
-            <td class="itincol2"></td>
-            <td><input type="text" id="address2" value="LAPRIDA 1474" maxlength="40"></td>
-          </tr>
-          <tr>
-            <td class="itincol2">City</td>
-            <td><input type="text" id="city" value="ROSARIO" maxlength="40"></td>
-          </tr>
-          <tr>
-            <td class="itincol2">State</td>
-            <td><input type="text" id="state" value="SANTA FE" maxlength="40"></td>
-          </tr>
-          <tr>
-            <td class="itincol2">ZIP</td>
-            <td><input type="text" id="zip" value="2000" maxlength="10"></td>
-          </tr>
-          <tr>
-            <td class="itincol2">Country</td>
-            <td>
-              <select class="select-choices save full-select change_select" name="country" id="country"
-                style="margin: 0 0 0.75em;">
-
-                <option value="AF">Afghanistan</option>
+      <!-- ADD/REMOVE CHILDREN -->
+      <div class="body-popup" id="itin-content03">
+        <div class="fields-wrapper">
+          <div class="subtitle">
+            <p>Add/Remove Children:</p>
+          </div>
+          <div class="form-group">
+            <select class="form-field save" name="change-children" id="change-children">
+              <option selected value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+            <span>
+              <i class="fas fa-sort-down"></i>
+            </span>
+          </div>
+          <div class="fields-wrapper" id="delete_children_sec" style="display:none;">
+            <h3>Select children to remove</h3>
+            <table width="100%" style="font-weight: normal;color: #000;">
+            </table>
+          </div>
+          <div id="children_content" class="fields-wrapper"></div>
+          <button class="newbtn btn-second number-submit" type="submit" onClick="getQuotes('quoteChildren');">
+            Submit
+          </button>
+        </div>
+      </div>
+      <!-- ADD/REMOVE INFANT -->
+      <div class="body-popup" id="itin-content10" style="display:none;">
+        <div class="fields-wrapper">
+          <div class="subtitle">
+            <p>Add/Remove Infants:</p>
+          </div>
+          <div class="form-group">
+            <select class="form-field save" name="change-infant" id="change-infant">
+              <option selected value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+            <span>
+              <i class="fas fa-sort-down"></i>
+            </span>
+          </div>
+          <div class="fields-wrapper" id="delete_infant_sec" style="display:none;">
+            <h3>Select infant(s) to remove</h3>
+            <table width="100%" style="font-weight: normal;color: #000;">
+            </table>
+          </div>
+          <div id="infant_content" class="fields-wrapper"></div>
+          <button class="newbtn btn-second number-submit" type="submit" onClick="getQuotes('quoteInfant');">
+            Submit
+          </button>
+        </div>
+      </div>
+      <!-- CHANGE CONTACT INFO -->
+      <div class="body-popup" id="itin-content04">
+        <div class="fields-wrapper">
+          <div class="subtitle">
+            <p>Change Contact Info:</p>
+          </div>
+          <div class="form-group">
+            <span class="span-125width">Address 1</span>
+            <input type="text" class="form-field" id="address" value="LAPRIDA 1474" maxlength="40">
+          </div>
+          <div class="form-group">
+            <span class="span-125width">Address 2</span>
+            <input type="text" class="form-field" id="address" value="LAPRIDA 1474" maxlength="40">
+          </div>
+          <div class="form-group">
+            <span class="span-125width">City</span>
+            <input type="text" class="form-field" id="city" value="ROSARIO" maxlength="40">
+          </div>
+          <div class="form-group">
+            <span class="span-125width">State</span>
+            <input type="text" class="form-field" id="state" value="SANTA FE" maxlength="40">
+          </div>
+          <div class="form-group">
+            <span class="span-125width">ZIP</span>
+            <input type="text" class="form-field" id="zip" value="2000" maxlength="10">
+          </div>
+          <div class="form-group">
+            <select name="country" id="country" class="form-field save">
+              <option value="AF">Afghanistan</option>
                 <option value="AL">Albania</option>
                 <option value="DZ">Algeria</option>
                 <option value="AO">Angola</option>
@@ -3980,86 +4001,101 @@
                 <option value="ZR">Zaire Republic</option>
                 <option value="ZM">Zambia</option>
                 <option value="ZW">Zimbabwe</option>
-
-                <select>
-            </td>
-          </tr>
-          <tr>
-            <td class="itincol2">Email</td>
-            <td><input type="text" id="email" value="HERNANDEZFLOR17@GMAIL.COM" maxlength="60"></td>
-          </tr>
-          <tr>
-            <td class="itincol2">Phone Number</td>
-            <td><input type="text" id="phone" value="3415693874" maxlength="20"></td>
-          </tr>
-          <tr>
-            <td class="itincol2">Remarks</td>
-            <td><input type="text" id="remarks" value="" maxlength="400"></td>
-          </tr>
-          <tr>
-            <td class="itincol2">Loyalty Code</td>
-            <td><input type="text" id="loyalty" value="" name="loyalty" maxlength="20"></td>
-          </tr>
-
-        </table>
-        <p class="center"><br>
-          <input type="submit" class="number-submit" value="Submit" onClick="getQuotes('saveContactInfo');"
-            style="float: inherit" />
-        </p>
+            </select>
+            <span>
+              <i class="fas fa-sort-down"></i>
+            </span>
+          </div>
+          <div class="form-group">
+            <span class="span-125width">Email</span>
+            <input type="email" class="form-field" id="email" value="HERNANDEZFLOR17@GMAIL.COM" maxlength="60">
+          </div>
+          <div class="form-group">
+            <span class="span-125width">Phone Number</span>
+            <input type="text" class="form-field" id="phone" value="3415693874" maxlength="20">
+          </div>
+          <div class="form-group">
+            <span class="span-125width">Remarks</span>
+            <input type="text" class="form-field" id="remarks" value="" maxlength="400">
+          </div>
+          <div class="form-group">
+            <span class="span-125width">Loyalty Code</span>
+            <input type="text" class="form-field" id="loyalty" name="loyalty" value="" maxlength="20">
+          </div>
+          <button class="newbtn btn-second number-submit" type="submit" onClick="getQuotes('saveContactInfo');">
+            Submit
+          </button>
+        </div>
       </div>
-      <div class="pop-content center hidden" id="itin-content11">
-        <p class="center bold f14px">Change Flight Informaion:</p>
-        <table width="100%">
-          <tr>
-            <td class="itincol2">Arrival Flight</td>
-            <td><input type="text" id="arrflight" value="" maxlength="9"></td>
-          </tr>
-          <tr>
-            <td class="itincol2">Arrival Time</td>
-            <td><input type="text" id="arrtime" value="" maxlength="5"></td>
-          </tr>
-          <tr>
-            <td class="itincol2">Departure Flight</td>
-            <td><input type="text" id="depflight" value="" maxlength="9"></td>
-          </tr>
-          <tr>
-            <td class="itincol2">Departure Time</td>
-            <td><input type="text" id="deptime" value="" maxlength="5"></td>
-          </tr>
-        </table>
-        <p class="center"><br>
-          <input type="submit" class="number-submit" value="Submit" onClick="getQuotes('saveFlightInfo');"
-            style="float: inherit" />
-        </p>
+      <!-- CHANGE FLIGHT INFO -->
+      <div class="body-popup" id="itin-content11" style="display:none;">
+        <div class="fields-wrapper">
+          <div class="subtitle">
+            <p>Change Flight Informaion:</p>
+          </div>
+          <div class="form-group">
+            <span class="span-125width">Arrival Flight</span>
+            <input type="text" class="form-field" id="arrflight" value="" maxlength="9">
+          </div>
+          <div class="form-group">
+            <span class="span-125width">Arrival Flight</span>
+            <input type="text" class="form-field" id="arrtime" value="" maxlength="5">
+          </div>
+          <div class="form-group">
+            <span class="span-125width">Departure Flight</span>
+            <input type="text" class="form-field" id="depflight" value="" maxlength="9">
+          </div>
+          <div class="form-group">
+            <span class="span-125width">Departure Time</span>
+            <input type="text" class="form-field" id="deptime" value="" maxlength="5">
+          </div>
+          <button class="newbtn btn-second number-submit" type="submit" onClick="getQuotes('saveFlightInfo');">
+            Submit
+          </button>
+        </div>
       </div>
-      <div class="pop-content center hidden" id="itin-content05">
-        <p class="center bold f14px">Change Names:</p>
-        <table width="100%">
-          <tr>
-            <td>First Names</td>
-            <td>Last Names</td>
-          </tr>
-          <tr>
-            <td class="itincol2"><input type="text" class="fname" value="Sebastian Andres" maxlength="30"></td>
-            <td><input type="text" class="lname" value="Uva" maxlength="30"></td>
-          </tr>
-          <tr>
-            <td class="itincol2"><input type="text" class="fname" value="Florencia" maxlength="30"></td>
-            <td><input type="text" class="lname" value="Hernandez" maxlength="30"></td>
-          </tr>
-        </table>
-        <p class="center"><br>
-          <input type="submit" class="number-submit" value="Submit" onClick="getQuotes('saveNames');"
-            style="float: inherit" />
-        </p>
+      <!-- CHANGE NAMES -->
+      <div class="body-popup" id="itin-content05" style="display:none;">
+        <div class="subtitle">
+          <p>Change Names:</p>
+        </div>
+        <div class="fields-wrapper">
+          <div class="name-wrapper">
+            <div class="form-group">
+              <span>First Name</span>
+              <input class="form-field fname" type="text" id="firstname" value="Sebastian Andres" maxlength="30">
+            </div>
+            <div class="form-group">
+              <span>Last Name</span>
+              <input class="form-field lname" type="text" id="lastname" value="Uva" maxlength="30">
+            </div>
+          </div>
+        </div>
+        
+        <div class="fields-wrapper">
+          <div class="name-wrapper">
+            <div class="form-group">
+              <span>First Name</span>
+              <input class="form-field fname" type="text" id="firstname" value="Florencia" maxlength="30">
+            </div>
+            <div class="form-group">
+              <span>Last Name</span>
+              <input class="form-field lname" type="email" id="lastname" value="Hernandez" maxlength="30">
+            </div>
+          </div>
+        </div>
+        <button class="newbtn btn-second" type="button" onClick="getQuotes('saveNames');">
+          Submit
+        </button>
       </div>
-      <div class="pop-content center hidden" id="itin-content08">
-        <p class="center bold f14px">Change Number of Rooms to:</p>
-        <div class="form-group" style="height: 30px;text-align:left;">
-          <div class="that-select-noa">
-            <select class="select-choices save full-select change_select" name="rooms" id="rooms"
-              style="margin: 0 0 0.75em;">
-
+      <!-- CHANGE NUMBER OF ROOMS -->
+      <div class="body-popup" id="itin-content08">
+        <div class="fields-wrapper">
+          <div class="subtitle">
+            <p>Change Dates:</p>
+          </div>
+          <div class="form-group">
+            <select class="form-field" name="rooms" id="rooms">
               <option value="01" selected>1</option>
               <option value="02">2</option>
               <option value="03">3</option>
@@ -4069,25 +4105,97 @@
               <option value="07">7</option>
               <option value="08">8</option>
               <option value="09">9</option>
-
             </select>
+            <span>
+              <i class="fas fa-sort-down"></i>
+            </span>
           </div>
-
+          <button type="submit" class="newbtn btn-second" onClick="getQuotes('AddRoom');">
+            Submit
+          </button>
         </div>
-        <p class="center"><br>
-          <input type="submit" class="number-submit" value="Submit" onClick="getQuotes('AddRoom');"
-            style="float: inherit" />
-        </p>
       </div>
-      <div class="pop-content center hidden" id="itin-content06">
-        <p class="center bold f14px">Change Payment Info:</p>
+      <!-- CHANGE PAYMENT INFO -->
+      <div class="body-popup" id="itin-content06">
+        <div class="fields-wrapper">
+          <div class="subtitle">
+            <p>Change Payment Info:</p>
+          </div>
+          <div class="form-group">
+            <span class="span-125width">Old Card Type</span>
+            <input type="text" class="form-field" value="MASTERCARD">
+          </div>
+          <div class="form-group">
+            <span class="span-125width">Cardholder Name</span>
+            <input type="text" class="form-field" id="pay_name" value="">
+          </div>
+          <div class="form-group">
+            <span class="span-125width">Card Number</span>
+            <input type="text" class="form-field" id="pay_number" maxlength="16" value="">
+          </div>
+          <div class="form-group">
+            <span class="span-125width">CVC</span>
+            <input type="text" class="form-field" id="pay_cvc" value="">
+          </div>
+          <div class="form-group">
+            <span class="span-125width">Month</span>
+            <select class="form-field save" id="pay_month" name="CCMonth">
+              <option value="01">01</option>
+              <option value="02">02</option>
+              <option value="03">03</option>
+              <option value="04">04</option>
+              <option value="05">05</option>
+              <option value="06">06</option>
+              <option value="07">07</option>
+              <option value="08">08</option>
+              <option value="09">09</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+            <span>
+              <i class="fas fa-sort-down"></i>
+            </span>
+          </div>
+          <div class="form-group">
+            <span class="span-125width">Year</span>
+            <select class="form-field save" id="pay_year" name="CCYear">
+              <option value="21">2021</option>
+              <option value="22">2022</option>
+              <option value="23">2023</option>
+              <option value="24">2024</option>
+              <option value="25">2025</option>
+              <option value="26">2026</option>
+              <option value="27">2027</option>
+              <option value="28">2028</option>
+              <option value="29">2029</option>
+              <option value="30">2030</option>
+              <option value="31">2031</option>
+              <option value="32">2032</option>
+              <option value="33">2033</option>
+              <option value="34">2034</option>
+              <option value="35">2035</option>
+              <option value="36">2036</option>
+            </select>
+            <span>
+              <i class="fas fa-sort-down"></i>
+            </span>
+          </div>
+          <div class="form-group">
+            <span class="span-125width">New Billing ZIP</span>
+            <input type="text" class="form-field" id="pay_zip" value="">
+          </div>
+          <button type="submit" class="newbtn btn-second" onClick="getQuotes('AddRoom');">
+            Submit
+          </button>
+        </div>
+        
+        <!-- <p class="center bold f14px">Change Payment Info:</p>
         <table width="100%">
           <tr>
             <td class="itincol2">Old Card Type</td>
             <td>
               MASTERCARD
-
-
           <tr>
             <td class="itincol2">New Cardholder Name</td>
             <td><input type="text" id="pay_name" value=""></td>
@@ -4162,15 +4270,91 @@
         <p class="center"><br>
           <input type="submit" class="number-submit" value="Submit" onClick="getQuotes('savePaymentInfo');"
             style="float: inherit" />
-        </p>
+        </p> -->
       </div>
-
-      <div class="pop-content center hidden" id="itin-content09">
-        <p class="center bold f14px">Make a Payment:</p>
+      <!-- MAKE A PAYMENT -->
+      <div class="body-popup" id="itin-content09">
+        <div class="fields-wrapper">
+          <div class="subtitle">
+            <p>Make a Payment:</p>
+            <p>Remaining Balance: <span class="money">912.67 </span></p>
+          </div>
+          <div class="form-group">
+            <span class="span-125width">Amount</span>
+            <input type="text" class="form-field" id="make_pay_amount">
+            <input type="hidden" class="form-field" id="rem_balance_amt" value="912.67"></td>
+          </div>
+          <div class="form-group">
+            <span class="span-125width">Card Name</span>
+            <input type="text" class="form-field" id="make_pay_name">
+          </div>
+          <div class="form-group">
+            <span class="span-125width">Card Number</span>
+            <input type="text" class="form-field" id="make_pay_number" maxlength="16">
+          </div>
+          <div class="form-group">
+            <span class="span-125width">CVC</span>
+            <input type="text" class="form-field" id="make_pay_cvc" maxlength="4">
+          </div>
+          <div class="form-group">
+            <span class="span-125width">Month</span>
+            <select class="form-field save" id="pay_month" name="CCMonth">
+              <option value="01">01</option>
+              <option value="02">02</option>
+              <option value="03">03</option>
+              <option value="04">04</option>
+              <option value="05">05</option>
+              <option value="06">06</option>
+              <option value="07">07</option>
+              <option value="08">08</option>
+              <option value="09">09</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+            <span>
+              <i class="fas fa-sort-down"></i>
+            </span>
+          </div>
+          <div class="form-group">
+            <span class="span-125width">Year</span>
+            <select class="form-field save" id="pay_year" name="CCYear">
+              <option value="21">2021</option>
+              <option value="22">2022</option>
+              <option value="23">2023</option>
+              <option value="24">2024</option>
+              <option value="25">2025</option>
+              <option value="26">2026</option>
+              <option value="27">2027</option>
+              <option value="28">2028</option>
+              <option value="29">2029</option>
+              <option value="30">2030</option>
+              <option value="31">2031</option>
+              <option value="32">2032</option>
+              <option value="33">2033</option>
+              <option value="34">2034</option>
+              <option value="35">2035</option>
+              <option value="36">2036</option>
+            </select>
+            <span>
+              <i class="fas fa-sort-down"></i>
+            </span>
+          </div>
+          <div class="form-group">
+            <span class="span-125width">Billing ZIP</span>
+            <input type="text" class="form-field" id="make_pay_zip" maxlength="4">
+          </div>
+          <button type="submit" class="newbtn btn-second" onClick="getQuotes('AddRoom');">
+            Submit
+          </button>
+        </div>
+        
+        
+        <!-- <p class="center bold f14px">Make a Payment:</p>
         <p class="center bold f14px red error_pay"></p>
         <table border="0" width="100%">
           <tr>
-            <td class="text-center" colspan="100%">Remaining Balance: <span class="money">912.67 </span></td>
+            <td class="text-center" colspan="100%"></td>
           </tr>
 
           <tr>
@@ -4250,21 +4434,30 @@
         <p class="center"><br>
           <input type="submit" class="number-submit" value="Submit" onClick="getQuotes('saveMakePayment');"
             style="float: inherit" />
-        </p>
+        </p> -->
 
       </div>
 
       <div class="pop-content center hidden" id="itin-final">
-        <p class="center bold f16px" id="itin-final-main"></p>
+        <p class="center bold f16px margin-0" id="itin-final-main"></p>
         <p class="center bold f16px green" id="itin-final-sub"></p>
-        <p class="center"><br>
-          <input type="submit" id="final-btn1" class="number-submit" value="Confirm" onClick="saveChgs();"
+        <div class="center-buttons">
+          <button type="submit" id="final-btn1" class="newbtn btn-second" onClick="saveChgs();">
+            Confirm
+          </button>
+          <button type="submit" id="final-btn2" class="newbtn btn-cancel" onClick="resetChgs();">
+            Cancel
+          </button>
+          <button type="submit" id="final-btn3" class="newbtn btn-second" onClick="resetChgs();">
+            Ok
+          </button>
+          <!-- <input type="submit" id="final-btn1" class="number-submit" value="Confirm" onClick="saveChgs();"
             style="float: inherit;display:none" />
           <input type="submit" id="final-btn2" class="number-submit" value="Cancel" onClick="resetChgs();"
             style="float: inherit;display:none" />
           <input type="submit" id="final-btn3" class="number-submit" value="Ok" onClick="resetChgs();"
-            style="float: inherit;display:none" />
-        </p>
+            style="float: inherit;display:none" /> -->
+        </div>
       </div>
     </div>
 
