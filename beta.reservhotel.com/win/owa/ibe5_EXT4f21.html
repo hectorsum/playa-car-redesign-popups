@@ -535,6 +535,7 @@
       $.fancybox({
         href: '#modifications',
         fitToView: false,
+        autoDimensions: true,
         autoSize: true,
         wrapCSS: "custom-pop-up",
         padding: 0,
@@ -578,6 +579,7 @@
               );
             $.fancybox({
               href: '#error-pop-up',
+              autoDimensions: true,
               fitToView: false,
               autoSize: true,
               closeClick: true,
@@ -1512,6 +1514,7 @@
               $("#itin-final-sub").html("");
               $("#final-btn1").attr("onClick", "");
               $("#final-btn1").hide();
+              $("#itin-final-sub").hide();
               $("#final-btn3").show();
               $("#final-btn3").attr("onclick",
                 "window.location = '/win/owa/ibe5_EXT.CHECK_ITIN?hotel=152&lastname=UVA&agent=DIEGO&was_modified=Y&conf=B182251&usr=DIEGO&lang=1&currency=';"
@@ -2031,6 +2034,7 @@
         $.fancybox({
           href: '#cancellations',
           fitToView: false,
+          autoDimensions: true,
           autoSize: true,
           closeClick: true,
           wrapCSS: 'custom-pop-up',
@@ -2078,6 +2082,7 @@
               fitToView: false,
               autoSize: true,
               closeClick: true,
+              autoDimensions: true,
               wrapCSS: 'custom-pop-up',
               padding: 0,
               maxWidth: "90%",
@@ -2099,6 +2104,7 @@
         fitToView: false,
         autoSize: true,
         closeClick: false,
+        autoDimensions: true,
         wrapCSS: 'custom-pop-up',
         padding: 0,
         maxWidth: "90%",
@@ -2111,6 +2117,7 @@
       $.fancybox({
         href: '#check-itinerary',
         fitToView: false,
+        autoDimensions: true,
         autoSize: true,
         closeClick: false,
         wrapCSS: 'custom-pop-up',
@@ -2128,6 +2135,7 @@
     function showCancel() {
       $.fancybox({
         href: '#modifications',
+        autoDimensions: true,
         fitToView: false,
         autoSize: true,
         wrapCSS: "custom-pop-up",
@@ -2145,6 +2153,7 @@
       $.fancybox({
         href: '#hotel-policies',
         fitToView: false,
+        autoDimensions: true,
         autoSize: true,
         wrapCSS: "custom-pop-up",
         padding: 0,
@@ -2160,6 +2169,7 @@
     function showLoading(y) {
       $.fancybox({
         href: '#send-to-friend',
+        autoDimensions: true,
         fitToView: false,
         autoSize: true,
         wrapCSS: 'custom-pop-up',
@@ -4055,38 +4065,42 @@
         </div>
       </div>
       <!-- CHANGE NAMES -->
-      <div class="body-popup" id="itin-content05" style="display:none;">
-        <div class="subtitle">
-          <p>Change Names:</p>
-        </div>
-        <div class="fields-wrapper">
-          <div class="name-wrapper">
-            <div class="form-group">
-              <span>First Name</span>
-              <input class="form-field fname" type="text" id="firstname" value="Sebastian Andres" maxlength="30">
+      <div id="itin-content05" style="display:flex; flex-direction:column; align-items: center;">
+        <div class="body-popup" id="itin-content05">
+          <div class="subtitle">
+            <p>Change Names:</p>
+          </div>
+          <div class="fields-wrapper">
+            <div class="name-wrapper">
+              <div class="form-group">
+                <span>First Name</span>
+                <input class="form-field fname" type="text" id="firstname" value="Sebastian Andres" maxlength="30">
+              </div>
+              <div class="form-group">
+                <span>Last Name</span>
+                <input class="form-field lname" type="text" id="lastname" value="Uva" maxlength="30">
+              </div>
             </div>
-            <div class="form-group">
-              <span>Last Name</span>
-              <input class="form-field lname" type="text" id="lastname" value="Uva" maxlength="30">
+          </div>
+          
+          <div class="fields-wrapper">
+            <div class="name-wrapper">
+              <div class="form-group">
+                <span>First Name</span>
+                <input class="form-field fname" type="text" id="firstname" value="Florencia" maxlength="30">
+              </div>
+              <div class="form-group">
+                <span>Last Name</span>
+                <input class="form-field lname" type="email" id="lastname" value="Hernandez" maxlength="30">
+              </div>
             </div>
           </div>
         </div>
-        
-        <div class="fields-wrapper">
-          <div class="name-wrapper">
-            <div class="form-group">
-              <span>First Name</span>
-              <input class="form-field fname" type="text" id="firstname" value="Florencia" maxlength="30">
-            </div>
-            <div class="form-group">
-              <span>Last Name</span>
-              <input class="form-field lname" type="email" id="lastname" value="Hernandez" maxlength="30">
-            </div>
-          </div>
+        <div class="submit-wrapper px-2 pb-2 w-100 d-flex justify-content-center align-items-center">
+          <button type="submit" class="newbtn btn-second" onClick="getQuotes('saveNames');">
+            Submit
+          </button>
         </div>
-        <button class="newbtn btn-second" type="button" onClick="getQuotes('saveNames');">
-          Submit
-        </button>
       </div>
       <!-- CHANGE NUMBER OF ROOMS -->      
       <div class="body-popup" id="itin-content08">
@@ -4192,256 +4206,90 @@
             Submit
           </button>
         </div>
-        
-        <!-- <p class="center bold f14px">Change Payment Info:</p>
-        <table width="100%">
-          <tr>
-            <td class="itincol2">Old Card Type</td>
-            <td>
-              MASTERCARD
-          <tr>
-            <td class="itincol2">New Cardholder Name</td>
-            <td><input type="text" id="pay_name" value=""></td>
-          </tr>
-          </td>
-          </tr>
-          <tr>
-            <td class="itincol2">New Card Number</td>
-            <td><input type="text" id="pay_number" maxlength="16" value=""></td>
-          </tr>
-          <tr>
-            <td class="itincol2">New CVC</td>
-            <td><input type="text" id="pay_cvc" value=""></td>
-          </tr>
-          <tr>
-            <td class="itincol2">New Expiration</td>
-            <td>
-              <div class="form-group" style="height: 30px;text-align:left;">
-
-                <div class="that-select-noa" style="width: 100px;    float: left;">
-                  <select class="select-choices save full-select change_select" name="CCMonth" id="pay_month"
-                    style="margin: 0 0 0.75em;">
-                    <option value="01">01</option>
-                    <option value="02">02</option>
-                    <option value="03">03</option>
-                    <option value="04">04</option>
-                    <option value="05">05</option>
-                    <option value="06">06</option>
-                    <option value="07">07</option>
-                    <option value="08">08</option>
-                    <option value="09">09</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                  </select>
-
-                </div>
-                <div class="that-select-noa" style="width: 100px;    float: right;">
-                  <select class="select-choices save full-select change_select" name="CCYear" id="pay_year"
-                    style="margin: 0 0 0.75em;">
-
-                    <option value="21">2021</option>
-                    <option value="22">2022</option>
-                    <option value="23">2023</option>
-                    <option value="24">2024</option>
-                    <option value="25">2025</option>
-                    <option value="26">2026</option>
-                    <option value="27">2027</option>
-                    <option value="28">2028</option>
-                    <option value="29">2029</option>
-                    <option value="30">2030</option>
-                    <option value="31">2031</option>
-                    <option value="32">2032</option>
-                    <option value="33">2033</option>
-                    <option value="34">2034</option>
-                    <option value="35">2035</option>
-                    <option value="36">2036</option>
-
-                  </select>
-                </div>
-
-
-              </div>
-            </td>
-          </tr>
-
-          <tr>
-            <td class="itincol2">New Billing ZIP</td>
-            <td><input type="text" id="pay_zip" value=""></td>
-          </tr>
-        </table>
-        <p class="center"><br>
-          <input type="submit" class="number-submit" value="Submit" onClick="getQuotes('savePaymentInfo');"
-            style="float: inherit" />
-        </p> -->
       </div>
       <!-- MAKE A PAYMENT -->
-      <div class="body-popup" id="itin-content09">
-        <div class="fields-wrapper">
-          <div class="subtitle">
-            <p>Make a Payment:</p>
-            <p>Remaining Balance: <span class="money">912.67 </span></p>
-          </div>
-          <div class="form-group">
-            <span class="span-125width">Amount</span>
-            <input type="text" class="form-field" id="make_pay_amount">
-            <input type="hidden" class="form-field" id="rem_balance_amt" value="912.67"></td>
-          </div>
-          <div class="form-group">
-            <span class="span-125width">Card Name</span>
-            <input type="text" class="form-field" id="make_pay_name">
-          </div>
-          <div class="form-group">
-            <span class="span-125width">Card Number</span>
-            <input type="text" class="form-field" id="make_pay_number" maxlength="16">
-          </div>
-          <div class="form-group">
-            <span class="span-125width">CVC</span>
-            <input type="text" class="form-field" id="make_pay_cvc" maxlength="4">
-          </div>
-          <div class="date-wrapper">
-            <label>Date Expiration</label>
-            <div class="form-group">
-              <span class="span-125width">Month</span>
-              <select class="form-field save" id="pay_month" name="CCMonth" style="border-radius: 0 !important;">
-                <option value="01">01</option>
-                <option value="02">02</option>
-                <option value="03">03</option>
-                <option value="04">04</option>
-                <option value="05">05</option>
-                <option value="06">06</option>
-                <option value="07">07</option>
-                <option value="08">08</option>
-                <option value="09">09</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-              </select>
-              <span>
-                <i class="fas fa-sort-down"></i>
-              </span>
+      <div id="itin-content09" style="display:flex; flex-direction:column; align-items: center;">
+        <div class="body-popup" id="itin-content09">
+          <div class="fields-wrapper">
+            <div class="subtitle">
+              <p>Make a Payment:</p>
+              <p>Remaining Balance: <span class="money">912.67 </span></p>
             </div>
             <div class="form-group">
-              <span class="span-125width">Year</span>
-              <select class="form-field save" id="pay_year" name="CCYear" style="border-radius: 0 !important;">
-                <option value="21">2021</option>
-                <option value="22">2022</option>
-                <option value="23">2023</option>
-                <option value="24">2024</option>
-                <option value="25">2025</option>
-                <option value="26">2026</option>
-                <option value="27">2027</option>
-                <option value="28">2028</option>
-                <option value="29">2029</option>
-                <option value="30">2030</option>
-                <option value="31">2031</option>
-                <option value="32">2032</option>
-                <option value="33">2033</option>
-                <option value="34">2034</option>
-                <option value="35">2035</option>
-                <option value="36">2036</option>
-              </select>
-              <span>
-                <i class="fas fa-sort-down"></i>
-              </span>
+              <span class="span-125width">Amount</span>
+              <input type="text" class="form-field" id="make_pay_amount">
+              <input type="hidden" class="form-field" id="rem_balance_amt" value="912.67"></td>
+            </div>
+            <div class="form-group">
+              <span class="span-125width">Card Name</span>
+              <input type="text" class="form-field" id="make_pay_name">
+            </div>
+            <div class="form-group">
+              <span class="span-125width">Card Number</span>
+              <input type="text" class="form-field" id="make_pay_number" maxlength="16">
+            </div>
+            <div class="form-group">
+              <span class="span-125width">CVC</span>
+              <input type="text" class="form-field" id="make_pay_cvc" maxlength="4">
+            </div>
+            <div class="date-wrapper">
+              <label>Date Expiration</label>
+              <div class="form-group">
+                <span class="span-125width">Month</span>
+                <select class="form-field save" id="pay_month" name="CCMonth" style="border-radius: 0 !important;">
+                  <option value="01">01</option>
+                  <option value="02">02</option>
+                  <option value="03">03</option>
+                  <option value="04">04</option>
+                  <option value="05">05</option>
+                  <option value="06">06</option>
+                  <option value="07">07</option>
+                  <option value="08">08</option>
+                  <option value="09">09</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+                <span>
+                  <i class="fas fa-sort-down"></i>
+                </span>
+              </div>
+              <div class="form-group">
+                <span class="span-125width">Year</span>
+                <select class="form-field save" id="pay_year" name="CCYear" style="border-radius: 0 !important;">
+                  <option value="21">2021</option>
+                  <option value="22">2022</option>
+                  <option value="23">2023</option>
+                  <option value="24">2024</option>
+                  <option value="25">2025</option>
+                  <option value="26">2026</option>
+                  <option value="27">2027</option>
+                  <option value="28">2028</option>
+                  <option value="29">2029</option>
+                  <option value="30">2030</option>
+                  <option value="31">2031</option>
+                  <option value="32">2032</option>
+                  <option value="33">2033</option>
+                  <option value="34">2034</option>
+                  <option value="35">2035</option>
+                  <option value="36">2036</option>
+                </select>
+                <span>
+                  <i class="fas fa-sort-down"></i>
+                </span>
+              </div>
+            </div>
+            <div class="form-group">
+              <span class="span-125width">Billing ZIP</span>
+              <input type="text" class="form-field" id="make_pay_zip" maxlength="4">
             </div>
           </div>
-          <div class="form-group">
-            <span class="span-125width">Billing ZIP</span>
-            <input type="text" class="form-field" id="make_pay_zip" maxlength="4">
-          </div>
+        </div>
+        <div class="submit-wrapper px-2 pb-2 w-100 d-flex justify-content-center align-items-center">
           <button type="submit" class="newbtn btn-second" onClick="getQuotes('saveMakePayment');">
             Submit
           </button>
         </div>
-        
-        
-        <!-- <p class="center bold f14px">Make a Payment:</p>
-        <p class="center bold f14px red error_pay"></p>
-        <table border="0" width="100%">
-          <tr>
-            <td class="text-center" colspan="100%"></td>
-          </tr>
-
-          <tr>
-            <td class="itincol2">Amount</td>
-            <td><input type="text" id="make_pay_amount" value=""><input type="hidden" id="rem_balance_amt"
-                value="912.67"></td>
-          </tr>
-          <tr>
-            <td class="itincol2">Card Name</td>
-            <td><input type="text" id="make_pay_name" value=""></td>
-          </tr>
-          </td>
-          </tr>
-          <tr>
-            <td class="itincol2">Card Number</td>
-            <td><input type="text" id="make_pay_number" maxlength="16" value=""></td>
-          </tr>
-          <tr>
-            <td class="itincol2">CVC</td>
-            <td><input type="text" id="make_pay_cvc" maxlength="4" value=""></td>
-          </tr>
-          <tr>
-            <td class="itincol2">Expiration</td>
-            <td>
-              <div class="form-group" style="height: 30px;text-align:left;">
-
-                <div class="that-select-noa" style="width: 100px;float:left;">
-                  <select class="select-choices save full-select change_select" name="CCMonth" id="make_pay_month"
-                    style="margin: 0 0 0.75em;">
-                    <option value="01">01</option>
-                    <option value="02">02</option>
-                    <option value="03">03</option>
-                    <option value="04">04</option>
-                    <option value="05">05</option>
-                    <option value="06">06</option>
-                    <option value="07">07</option>
-                    <option value="08">08</option>
-                    <option value="09">09</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                  </select>
-                </div>
-                <div class="that-select-noa" style="width: 100px;float:right;">
-                  <select class="select-choices save full-select change_select" name="CCYear" id="make_pay_year"
-                    style="margin: 0 0 0.75em;">
-
-                    <option value="21">2021</option>
-                    <option value="22">2022</option>
-                    <option value="23">2023</option>
-                    <option value="24">2024</option>
-                    <option value="25">2025</option>
-                    <option value="26">2026</option>
-                    <option value="27">2027</option>
-                    <option value="28">2028</option>
-                    <option value="29">2029</option>
-                    <option value="30">2030</option>
-                    <option value="31">2031</option>
-                    <option value="32">2032</option>
-                    <option value="33">2033</option>
-                    <option value="34">2034</option>
-                    <option value="35">2035</option>
-                    <option value="36">2036</option>
-
-                  </select>
-
-                </div>
-
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td class="itincol2">Billing ZIP</td>
-            <td><input type="text" id="make_pay_zip" value=""></td>
-          </tr>
-        </table>
-        <p class="center"><br>
-          <input type="submit" class="number-submit" value="Submit" onClick="getQuotes('saveMakePayment');"
-            style="float: inherit" />
-        </p> -->
-
       </div>
 
       <div class="pop-content center hidden" id="itin-final">
@@ -4451,11 +4299,11 @@
           <button type="submit" id="final-btn1" class="newbtn btn-second" onClick="saveChgs();">
             Confirm
           </button>
-          <button type="submit" id="final-btn2" class="newbtn btn-cancel" onClick="resetChgs();">
-            Cancel
-          </button>
           <button type="submit" id="final-btn3" class="newbtn btn-second" onClick="resetChgs();">
             Ok
+          </button>
+          <button type="submit" id="final-btn2" class="newbtn btn-cancel" onClick="resetChgs();">
+            Cancel
           </button>
           <!-- <input type="submit" id="final-btn1" class="number-submit" value="Confirm" onClick="saveChgs();"
             style="float: inherit;display:none" />

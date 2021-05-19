@@ -139,6 +139,8 @@
     align-items: center;
     background: #fff;
     padding: 1rem;
+    overflow: auto;
+    display: block;
   }
   .body-popup .subtitle:first-child{
     margin-bottom: 0.5rem;
@@ -284,6 +286,9 @@
   #check-itinerary .pop-content{
     padding: 1rem;
   }
+  #final-btn3{
+    margin-right: 0.5rem;
+  }
   @media(max-width:1024px){
     .newbtn{
       width: 100% !important;
@@ -308,6 +313,12 @@
     }
   }
   @media(max-width:768px){
+    .submit-wrapper{
+      padding-top: 0.5rem;
+    }
+    #final-btn3{
+      margin-bottom: 0.5rem;
+    }
     .center-buttons{
       flex-direction: column;
     }
@@ -315,10 +326,10 @@
       margin-bottom: 0.5rem;
     }
     .body-popup{
-      max-height: 400px;
+      max-height: 540px;
       overflow: auto;
       display: block;
-      margin-bottom: 1rem;
+      /* margin-bottom: 1rem; */
     }
     .popup{
       width: 100%;
