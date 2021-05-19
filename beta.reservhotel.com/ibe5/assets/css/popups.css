@@ -336,3 +336,11 @@
       margin-bottom: 0.5rem !important;
     }
   }
+  @media (max-width:480px){
+    .form-group > span{
+      font-size: 12px !important;
+    }
+    .form-group > .span-125width{
+      min-width: 122px !important;
+    }
+  }

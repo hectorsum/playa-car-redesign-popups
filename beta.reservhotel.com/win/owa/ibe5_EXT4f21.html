@@ -1064,7 +1064,7 @@
               $(".fancybox-wrap").width(900);
               $(".fancybox-inner").width(900);
               $.fancybox.reposition();
-              $("#check-itinerary .pop-content").css("width", "100%");
+              $("#check-itinerary .pop-content").css("width", "100%").css("min-width","100%");
               $("#itin-final-main").html("Change room rate<br>*Prices display total extra cost");
 
               var temp = "";
@@ -3597,7 +3597,7 @@
     </div>
 
 
-    <div class="popup" id="check-itinerary">
+    <div class="popup" id="check-itinerary" style="display:none;">
       <!-- <h3 class="pop-up-title">Change Itinerary</h3> -->
       <header>
         <p>
@@ -4116,7 +4116,7 @@
         </div>
       </div>
       <!-- CHANGE PAYMENT INFO -->
-      <div class="body-popup" id="itin-content06">
+      <div class="body-popup" id="itin-content06" style="display:none">
         <div class="fields-wrapper">
           <div class="subtitle">
             <p>Change Payment Info:</p>
@@ -4188,7 +4188,7 @@
             <span class="span-125width">New Billing ZIP</span>
             <input type="text" class="form-field" id="pay_zip" value="">
           </div>
-          <button type="submit" class="newbtn btn-second" onClick="getQuotes('AddRoom');">
+          <button type="submit" class="newbtn btn-second" onClick="getQuotes('savePaymentInfo');">
             Submit
           </button>
         </div>
