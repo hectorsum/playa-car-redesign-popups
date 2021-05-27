@@ -1175,8 +1175,7 @@
               var xmlDoc = jQuery.parseXML(res);
               var form = '';
               if (currentAdults < changeAdults) {
-                form =
-                  '<div class="fields-wrapper mt-3">';
+                form ='<div class="fields-wrapper mt-3">';
                 for (i = 0; i < adults; i++) {
                   form +=
                     '<div class="name-wrapper"><div class="form-group"><span>First Name</span><input class="form-field fnameadd" type="text" maxlength="30"></div><div class="form-group"><span>Last Name</span><input class="form-field lnameadd" type="text" maxlength="30"></div></div>';
@@ -1332,11 +1331,9 @@
             } else {
               var xmlDoc = jQuery.parseXML(res);
               if (currentChildren < $("#change-infant").val()) {
-                form =
-                  '<div class="fields-wrapper mt-3">';
+                form = '<div class="fields-wrapper mt-3">';
                 for (i = 0; i < children; i++) {
-                  form +=
-                    '<tr><td class="itincol2"><input type="text" class="fnameadd" value="" maxlength="30"></td><td><input type="text" class="lnameadd" value="" maxlength="30"></td></tr>';
+                  form += '<div class="name-wrapper"><div class="form-group"><span>First Name</span><input class="form-field fnameadd" type="text" maxlength="30"></div><div class="form-group"><span>Last Name</span><input class="form-field lnameadd" type="text" maxlength="30"></div></div>';
                 }
                 form += '</div>';
               }
@@ -1475,6 +1472,8 @@
               $("#itin-final-main").html("Changed flight info.");
               $("#itin-final-sub").html("");
               $("#final-btn1").attr("onClick", "");
+              $("#final-btn1").hide();
+              $("#final-btn2").hide();
               $("#final-btn3").show();
               $("#final-btn3").attr("onclick",
                 "window.location = '/win/owa/ibe5_EXT.CHECK_ITIN?hotel=152&conf=B182251&usr=DIEGO&was_modified=Y&lastname=UVA&agent=DIEGO&lang=1&currency=';"
@@ -4106,7 +4105,7 @@
       <div class="body-popup" id="itin-content08">
         <div class="fields-wrapper">
           <div class="subtitle">
-            <p>Change Dates:</p>
+            <p>Change Number of Roomns:</p>
           </div>
           <div class="form-group">
             <select class="form-field" name="rooms" id="rooms">
@@ -4218,7 +4217,7 @@
             <div class="form-group">
               <span class="span-125width">Amount</span>
               <input type="text" class="form-field" id="make_pay_amount">
-              <input type="hidden" class="form-field" id="rem_balance_amt" value="912.67"></td>
+              <input type="hidden" class="form-field" id="rem_balance_amt" value="912.67">
             </div>
             <div class="form-group">
               <span class="span-125width">Card Name</span>
@@ -4305,12 +4304,6 @@
           <button type="submit" id="final-btn2" class="newbtn btn-cancel" onClick="resetChgs();">
             Cancel
           </button>
-          <!-- <input type="submit" id="final-btn1" class="number-submit" value="Confirm" onClick="saveChgs();"
-            style="float: inherit;display:none" />
-          <input type="submit" id="final-btn2" class="number-submit" value="Cancel" onClick="resetChgs();"
-            style="float: inherit;display:none" />
-          <input type="submit" id="final-btn3" class="number-submit" value="Ok" onClick="resetChgs();"
-            style="float: inherit;display:none" /> -->
         </div>
       </div>
     </div>
